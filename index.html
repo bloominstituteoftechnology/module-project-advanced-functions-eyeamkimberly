@@ -68,8 +68,11 @@
     // ❗ Notes:
     // 🧠 Solve this challenge using the forEach method of the learners array.
     // 🧠 Use arrow functions whenever possible.
-    const processLearnerForEach = () => {
-     
+    const processLearnerForEach = (learners) => {
+    learners.forEach((learner) => {
+      learner.lovesJS = learner.lovesJS === 1 ? true : false
+    })
+    return learners
     }
     
    
@@ -80,8 +83,13 @@
     // ❗ Notes:
     // 🧠 Solve this challenge using the map method of the learners array.
     // 🧠 Use arrow functions.
-    const processLearnerMap = () => {
-
+    const processLearnerMap = (learners) => {
+    return learners.map((learner) => {
+      return{
+        ...learner,
+        lovesJS: learner.lovesJS === 1 ? true : false
+      }
+    })
     }
 
     // 👉 CHALLENGE 5
@@ -92,8 +100,21 @@
     // ❗ Notes:
     // 🧠 Solve this challenge using the forEach method of the learners array.
     // 🧠 You will need to declare a result array into which you push learners from inside your forEach loop.
-    const getJavaScriptLoversForEach = () => {
+    const getJavaScriptLoversForEach = (learners) => {
+    const result = []
 
+    learners.forEach((learner) => {
+      const lovesJS = learner.lovesJS
+
+      if (lovesJS === true || lovesJS === 1) {
+        result.push(learner)
+      }
+    })
+     if (result.length === 0) {
+      return "no JS lovers here!"
+    }else{
+      return result
+    }
     }
 
     // 👉 CHALLENGE 6
