@@ -122,8 +122,16 @@
     // 🧠 It should work exactly the same as the getJavaScriptLoversForEach function above.
     // ❗ Notes:
     // 🧠 Solve this challenge using the filter method of the learners array.
-    const getJavaScriptLoversFilter = () => {
-
+    const getJavaScriptLoversFilter = (learners) => {
+    const result = learners.filter((learner) => {
+      const lovesJS = learner.lovesJS
+      return lovesJS === true || lovesJS ===1
+    })
+    if (result.length === 0){
+      return "no JS lovers here!"
+    } else {
+      return result
+    }
     }
 
     // 👉 CHALLENGE 7
@@ -138,8 +146,17 @@
     // ❗ Notes:
     // 🧠 This could be solved by using filter to make an array of odd integers, and then using forEach to add them up.
     // 🧠 Or you could opt for solving everything with a single forEach which is the recommended approach (saves a loop).
-    const sumOddInts = () => {
+    const sumOddInts = (array) => {
+    let sum = 0
+    const odds = []
 
+    array.forEach((num) => {
+      if (num % 2 !== 0){
+        sum += num
+        odds.push(num)
+      }
+    })
+    return [sum, odds]
     }
 
     // 👉 CHALLENGE 8
@@ -153,7 +170,11 @@
     // checkInts(2, 6) // should return ["even", "even"]
     // ❗ Notes:
     // 🧠 Solve this problem using rest parameters and map.
-    const checkInts = () => {
+    const checkInts = (...args) => {
+      if (args.length === 0){
+        return "pass some arguments, yo!"
+      }
+      return args.map((num) => (num % 2 === 0 ? "even" : "odd"))
 
     }
 
