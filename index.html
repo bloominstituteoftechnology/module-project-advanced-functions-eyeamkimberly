@@ -48,9 +48,19 @@
     // ❗ Notes:
     // 🧠 There are many approaches to this problem: using a loop, using forEach, using map...
     // 🧠 Solve this challenge using a for/in loop or a for loop.
-    const processLearnersLoop = () => {
-
+    const processLearnersLoop = (learners) => {
+    for (let i = 0; i < learners.length; i++) {
+      const learner = learners[i];
+      for (let prop in learner){
+        if (prop === "lovesJS"){
+          learner[prop] = learner[prop] === 1 ? true : false
+        }
+      }
+      
     }
+    return learners
+    }
+
 
     // 👉 CHALLENGE 3
     // 🧠 The function processLearnerForEach takes an array of learner objects as its argument, and returns it after some modifications.
@@ -59,8 +69,10 @@
     // 🧠 Solve this challenge using the forEach method of the learners array.
     // 🧠 Use arrow functions whenever possible.
     const processLearnerForEach = () => {
-
+     
     }
+    
+   
 
     // 👉 CHALLENGE 4
     // 🧠 The function processLearnerMap takes an array of learner objects as its argument, and returns a new array.
